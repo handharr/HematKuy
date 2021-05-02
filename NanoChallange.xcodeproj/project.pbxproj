@@ -1,0 +1,541 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		86006896263D2BD60090F43C /* ExpenseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86006895263D2BD60090F43C /* ExpenseCollection.swift */; };
+		8607F90E2636525E0010C8A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607F90D2636525E0010C8A2 /* AppDelegate.swift */; };
+		8607F9102636525E0010C8A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607F90F2636525E0010C8A2 /* SceneDelegate.swift */; };
+		8607F9172636525F0010C8A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8607F9162636525F0010C8A2 /* Assets.xcassets */; };
+		8607F924263655040010C8A2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607F923263655040010C8A2 /* TabBarViewController.swift */; };
+		8631AA4E263D7A98000F9A4F /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631AA4C263D7A98000F9A4F /* AddTransactionViewController.swift */; };
+		8631AA4F263D7A98000F9A4F /* AddTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8631AA4D263D7A98000F9A4F /* AddTransactionViewController.xib */; };
+		8631AA53263D8454000F9A4F /* AddTransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631AA51263D8454000F9A4F /* AddTransactionTableViewCell.swift */; };
+		8631AA54263D8454000F9A4F /* AddTransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8631AA52263D8454000F9A4F /* AddTransactionTableViewCell.xib */; };
+		8631AA56263D902F000F9A4F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631AA55263D902F000F9A4F /* Protocols.swift */; };
+		864FC210263A489E00AFCB16 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FC20E263A489E00AFCB16 /* TodayViewController.swift */; };
+		864FC211263A489E00AFCB16 /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 864FC20F263A489E00AFCB16 /* TodayViewController.xib */; };
+		864FC215263A48BA00AFCB16 /* PlanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FC213263A48B900AFCB16 /* PlanningViewController.swift */; };
+		864FC216263A48BA00AFCB16 /* PlanningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 864FC214263A48BA00AFCB16 /* PlanningViewController.xib */; };
+		864FC21A263A48D700AFCB16 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FC218263A48D700AFCB16 /* TransactionsViewController.swift */; };
+		864FC21B263A48D700AFCB16 /* TransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 864FC219263A48D700AFCB16 /* TransactionsViewController.xib */; };
+		864FC21F263A4BAD00AFCB16 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FC21D263A4BAD00AFCB16 /* BudgetTableViewCell.swift */; };
+		864FC220263A4BAD00AFCB16 /* BudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 864FC21E263A4BAD00AFCB16 /* BudgetTableViewCell.xib */; };
+		864FC224263A4BDF00AFCB16 /* PlanReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FC222263A4BDF00AFCB16 /* PlanReminderTableViewCell.swift */; };
+		864FC225263A4BDF00AFCB16 /* PlanReminderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 864FC223263A4BDF00AFCB16 /* PlanReminderTableViewCell.xib */; };
+		864FC227263A552700AFCB16 /* ExpenseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FC226263A552700AFCB16 /* ExpenseCellViewModel.swift */; };
+		864FC22C263A621500AFCB16 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FC22B263A621500AFCB16 /* CardView.swift */; };
+		86DEDBD7263AB3E30088F4C7 /* SavingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DEDBD5263AB3E30088F4C7 /* SavingTableViewCell.swift */; };
+		86DEDBD8263AB3E30088F4C7 /* SavingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86DEDBD6263AB3E30088F4C7 /* SavingTableViewCell.xib */; };
+		86F7F1EF263C54560036733F /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F7F1EE263C54560036733F /* Expense.swift */; };
+		86F7F1F1263C549D0036733F /* DailyExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F7F1F0263C549D0036733F /* DailyExpense.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		86006895263D2BD60090F43C /* ExpenseCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCollection.swift; sourceTree = "<group>"; };
+		8607F90A2636525E0010C8A2 /* NanoChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8607F90D2636525E0010C8A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8607F90F2636525E0010C8A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8607F9162636525F0010C8A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8607F91B2636525F0010C8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8607F923263655040010C8A2 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		8631AA4C263D7A98000F9A4F /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
+		8631AA4D263D7A98000F9A4F /* AddTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTransactionViewController.xib; sourceTree = "<group>"; };
+		8631AA51263D8454000F9A4F /* AddTransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionTableViewCell.swift; sourceTree = "<group>"; };
+		8631AA52263D8454000F9A4F /* AddTransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTransactionTableViewCell.xib; sourceTree = "<group>"; };
+		8631AA55263D902F000F9A4F /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		864FC20E263A489E00AFCB16 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		864FC20F263A489E00AFCB16 /* TodayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayViewController.xib; sourceTree = "<group>"; };
+		864FC213263A48B900AFCB16 /* PlanningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningViewController.swift; sourceTree = "<group>"; };
+		864FC214263A48BA00AFCB16 /* PlanningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanningViewController.xib; sourceTree = "<group>"; };
+		864FC218263A48D700AFCB16 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		864FC219263A48D700AFCB16 /* TransactionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsViewController.xib; sourceTree = "<group>"; };
+		864FC21D263A4BAD00AFCB16 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
+		864FC21E263A4BAD00AFCB16 /* BudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetTableViewCell.xib; sourceTree = "<group>"; };
+		864FC222263A4BDF00AFCB16 /* PlanReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanReminderTableViewCell.swift; sourceTree = "<group>"; };
+		864FC223263A4BDF00AFCB16 /* PlanReminderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanReminderTableViewCell.xib; sourceTree = "<group>"; };
+		864FC226263A552700AFCB16 /* ExpenseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCellViewModel.swift; sourceTree = "<group>"; };
+		864FC22B263A621500AFCB16 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		86DEDBD5263AB3E30088F4C7 /* SavingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingTableViewCell.swift; sourceTree = "<group>"; };
+		86DEDBD6263AB3E30088F4C7 /* SavingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavingTableViewCell.xib; sourceTree = "<group>"; };
+		86F7F1EE263C54560036733F /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		86F7F1F0263C549D0036733F /* DailyExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyExpense.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8607F9072636525E0010C8A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		86006893263D0E510090F43C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8631AA4B263D7A73000F9A4F /* AddTransactionViewController */,
+				864FC217263A48BF00AFCB16 /* TransactionsViewController */,
+				864FC212263A48A400AFCB16 /* PlanningViewController */,
+				864FC20D263A488800AFCB16 /* TodayViewController */,
+				8607F923263655040010C8A2 /* TabBarViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8607F9012636525E0010C8A2 = {
+			isa = PBXGroup;
+			children = (
+				8607F90C2636525E0010C8A2 /* NanoChallange */,
+				8607F90B2636525E0010C8A2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8607F90B2636525E0010C8A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8607F90A2636525E0010C8A2 /* NanoChallange.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8607F90C2636525E0010C8A2 /* NanoChallange */ = {
+			isa = PBXGroup;
+			children = (
+				864FC20B263A469800AFCB16 /* Protocols */,
+				864FC20C263A46BA00AFCB16 /* Resources */,
+				864FC203263A458200AFCB16 /* Models */,
+				864FC206263A459E00AFCB16 /* CustomViews */,
+				864FC205263A459400AFCB16 /* ViewModels */,
+				86006893263D0E510090F43C /* Controllers */,
+				8607F91B2636525F0010C8A2 /* Info.plist */,
+			);
+			path = NanoChallange;
+			sourceTree = "<group>";
+		};
+		8631AA4B263D7A73000F9A4F /* AddTransactionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8631AA4C263D7A98000F9A4F /* AddTransactionViewController.swift */,
+				8631AA4D263D7A98000F9A4F /* AddTransactionViewController.xib */,
+			);
+			path = AddTransactionViewController;
+			sourceTree = "<group>";
+		};
+		8631AA50263D8439000F9A4F /* AddTransactionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8631AA51263D8454000F9A4F /* AddTransactionTableViewCell.swift */,
+				8631AA52263D8454000F9A4F /* AddTransactionTableViewCell.xib */,
+			);
+			path = AddTransactionTableViewCell;
+			sourceTree = "<group>";
+		};
+		864FC203263A458200AFCB16 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				86F7F1EE263C54560036733F /* Expense.swift */,
+				86F7F1F0263C549D0036733F /* DailyExpense.swift */,
+				86006895263D2BD60090F43C /* ExpenseCollection.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		864FC205263A459400AFCB16 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				864FC226263A552700AFCB16 /* ExpenseCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		864FC206263A459E00AFCB16 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				864FC22A263A61F600AFCB16 /* CardView */,
+				864FC20A263A465800AFCB16 /* CollectionViewCells */,
+				864FC209263A465000AFCB16 /* TableViewCells */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		864FC209263A465000AFCB16 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				8631AA50263D8439000F9A4F /* AddTransactionTableViewCell */,
+				86DEDBD4263AB3CF0088F4C7 /* SavingTableViewCell */,
+				864FC221263A4BBC00AFCB16 /* PlanReminderTableViewCell */,
+				864FC21C263A4B8E00AFCB16 /* BudgetTableViewCell */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		864FC20A263A465800AFCB16 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		864FC20B263A469800AFCB16 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8631AA55263D902F000F9A4F /* Protocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		864FC20C263A46BA00AFCB16 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8607F90D2636525E0010C8A2 /* AppDelegate.swift */,
+				8607F90F2636525E0010C8A2 /* SceneDelegate.swift */,
+				8607F9162636525F0010C8A2 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		864FC20D263A488800AFCB16 /* TodayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				864FC20E263A489E00AFCB16 /* TodayViewController.swift */,
+				864FC20F263A489E00AFCB16 /* TodayViewController.xib */,
+			);
+			path = TodayViewController;
+			sourceTree = "<group>";
+		};
+		864FC212263A48A400AFCB16 /* PlanningViewController */ = {
+			isa = PBXGroup;
+			children = (
+				864FC213263A48B900AFCB16 /* PlanningViewController.swift */,
+				864FC214263A48BA00AFCB16 /* PlanningViewController.xib */,
+			);
+			path = PlanningViewController;
+			sourceTree = "<group>";
+		};
+		864FC217263A48BF00AFCB16 /* TransactionsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				864FC218263A48D700AFCB16 /* TransactionsViewController.swift */,
+				864FC219263A48D700AFCB16 /* TransactionsViewController.xib */,
+			);
+			path = TransactionsViewController;
+			sourceTree = "<group>";
+		};
+		864FC21C263A4B8E00AFCB16 /* BudgetTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				864FC21D263A4BAD00AFCB16 /* BudgetTableViewCell.swift */,
+				864FC21E263A4BAD00AFCB16 /* BudgetTableViewCell.xib */,
+			);
+			path = BudgetTableViewCell;
+			sourceTree = "<group>";
+		};
+		864FC221263A4BBC00AFCB16 /* PlanReminderTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				864FC222263A4BDF00AFCB16 /* PlanReminderTableViewCell.swift */,
+				864FC223263A4BDF00AFCB16 /* PlanReminderTableViewCell.xib */,
+			);
+			path = PlanReminderTableViewCell;
+			sourceTree = "<group>";
+		};
+		864FC22A263A61F600AFCB16 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				864FC22B263A621500AFCB16 /* CardView.swift */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
+		86DEDBD4263AB3CF0088F4C7 /* SavingTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				86DEDBD5263AB3E30088F4C7 /* SavingTableViewCell.swift */,
+				86DEDBD6263AB3E30088F4C7 /* SavingTableViewCell.xib */,
+			);
+			path = SavingTableViewCell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8607F9092636525E0010C8A2 /* NanoChallange */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8607F91E2636525F0010C8A2 /* Build configuration list for PBXNativeTarget "NanoChallange" */;
+			buildPhases = (
+				8607F9062636525E0010C8A2 /* Sources */,
+				8607F9072636525E0010C8A2 /* Frameworks */,
+				8607F9082636525E0010C8A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NanoChallange;
+			productName = NanoChallange;
+			productReference = 8607F90A2636525E0010C8A2 /* NanoChallange.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8607F9022636525E0010C8A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					8607F9092636525E0010C8A2 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 8607F9052636525E0010C8A2 /* Build configuration list for PBXProject "NanoChallange" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8607F9012636525E0010C8A2;
+			productRefGroup = 8607F90B2636525E0010C8A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8607F9092636525E0010C8A2 /* NanoChallange */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8607F9082636525E0010C8A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				864FC220263A4BAD00AFCB16 /* BudgetTableViewCell.xib in Resources */,
+				864FC21B263A48D700AFCB16 /* TransactionsViewController.xib in Resources */,
+				86DEDBD8263AB3E30088F4C7 /* SavingTableViewCell.xib in Resources */,
+				864FC216263A48BA00AFCB16 /* PlanningViewController.xib in Resources */,
+				8607F9172636525F0010C8A2 /* Assets.xcassets in Resources */,
+				864FC211263A489E00AFCB16 /* TodayViewController.xib in Resources */,
+				8631AA4F263D7A98000F9A4F /* AddTransactionViewController.xib in Resources */,
+				864FC225263A4BDF00AFCB16 /* PlanReminderTableViewCell.xib in Resources */,
+				8631AA54263D8454000F9A4F /* AddTransactionTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8607F9062636525E0010C8A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86F7F1EF263C54560036733F /* Expense.swift in Sources */,
+				864FC227263A552700AFCB16 /* ExpenseCellViewModel.swift in Sources */,
+				864FC210263A489E00AFCB16 /* TodayViewController.swift in Sources */,
+				8607F924263655040010C8A2 /* TabBarViewController.swift in Sources */,
+				864FC21A263A48D700AFCB16 /* TransactionsViewController.swift in Sources */,
+				864FC22C263A621500AFCB16 /* CardView.swift in Sources */,
+				8607F90E2636525E0010C8A2 /* AppDelegate.swift in Sources */,
+				8607F9102636525E0010C8A2 /* SceneDelegate.swift in Sources */,
+				864FC21F263A4BAD00AFCB16 /* BudgetTableViewCell.swift in Sources */,
+				86DEDBD7263AB3E30088F4C7 /* SavingTableViewCell.swift in Sources */,
+				8631AA53263D8454000F9A4F /* AddTransactionTableViewCell.swift in Sources */,
+				864FC224263A4BDF00AFCB16 /* PlanReminderTableViewCell.swift in Sources */,
+				864FC215263A48BA00AFCB16 /* PlanningViewController.swift in Sources */,
+				8631AA4E263D7A98000F9A4F /* AddTransactionViewController.swift in Sources */,
+				86006896263D2BD60090F43C /* ExpenseCollection.swift in Sources */,
+				8631AA56263D902F000F9A4F /* Protocols.swift in Sources */,
+				86F7F1F1263C549D0036733F /* DailyExpense.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8607F91C2636525F0010C8A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8607F91D2636525F0010C8A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8607F91F2636525F0010C8A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NanoChallange/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Example.NanoChallange;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8607F9202636525F0010C8A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NanoChallange/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Example.NanoChallange;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8607F9052636525E0010C8A2 /* Build configuration list for PBXProject "NanoChallange" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8607F91C2636525F0010C8A2 /* Debug */,
+				8607F91D2636525F0010C8A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8607F91E2636525F0010C8A2 /* Build configuration list for PBXNativeTarget "NanoChallange" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8607F91F2636525F0010C8A2 /* Debug */,
+				8607F9202636525F0010C8A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8607F9022636525E0010C8A2 /* Project object */;
+}

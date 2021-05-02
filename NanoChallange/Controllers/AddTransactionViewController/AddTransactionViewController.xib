@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddTransactionViewController" customModule="NanoChallange" customModuleProvider="target">
+            <connections>
+                <outlet property="addTransactionTableView" destination="XuF-bJ-RQs" id="kEI-b1-ctv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="XuF-bJ-RQs">
+                    <rect key="frame" x="20" y="108" width="374" height="754"/>
+                </tableView>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2RJ-Ih-8bd">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <items>
+                        <navigationItem title="Add Transaction" id="lcb-0L-2SU">
+                            <barButtonItem key="leftBarButtonItem" title="cancel" id="pDq-si-l4u">
+                                <connections>
+                                    <action selector="cancelTapped:" destination="-1" id="VqJ-9u-cwW"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="Save" id="MMe-Hu-fKg">
+                                <connections>
+                                    <action selector="saveTapped:" destination="-1" id="cOV-wf-chT"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="XuF-bJ-RQs" firstAttribute="top" secondItem="2RJ-Ih-8bd" secondAttribute="bottom" constant="20" id="W67-ZG-qMX"/>
+                <constraint firstItem="2RJ-Ih-8bd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="byG-13-HAt"/>
+                <constraint firstItem="XuF-bJ-RQs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="eDh-pq-wRC"/>
+                <constraint firstItem="2RJ-Ih-8bd" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="f9T-AJ-eGk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XuF-bJ-RQs" secondAttribute="trailing" constant="20" id="lVD-xI-WIu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="XuF-bJ-RQs" secondAttribute="bottom" id="o1z-nO-Bkh"/>
+                <constraint firstItem="2RJ-Ih-8bd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="zFw-Ns-8If"/>
+            </constraints>
+            <point key="canvasLocation" x="82.608695652173921" y="104.46428571428571"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
