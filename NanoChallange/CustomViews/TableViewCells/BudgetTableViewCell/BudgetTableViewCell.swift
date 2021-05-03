@@ -13,19 +13,17 @@ class BudgetTableViewCell: UITableViewCell {
     
     static let identifier = "BudgetTableViewCell"
     static let bindNib = UINib(nibName: "BudgetTableViewCell", bundle: nil)
-
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-//
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
     
-    @IBAction func handleBudgetButtonTap(_ sender: Any) {
+    var delegate: SetBudgetAmount?
+    
+    func setCell(model: BudgetCellViewModel) {
+        budgetLabel.text = model.title
+        budgetButton.setTitle("IDR \(model.getAmount())", for: .normal)
+        delegate = model.delegate
+    }
+    
+    @IBAction func handleBudgetButtonTap(_ sender: UIButton) {
+        delegate?.setAmount()
     }
     
 }

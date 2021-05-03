@@ -9,4 +9,11 @@ import Foundation
 
 class UserSetting {
     static var limitAmount: Int = 50000
+    static func getLimitAmount() -> Int {
+        
+        let defaults = UserDefaults.standard
+        let amount = defaults.integer(forKey: "limitAmount")
+        
+        return amount
+    }
 }

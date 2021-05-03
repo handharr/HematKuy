@@ -19,8 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="U1j-z8-BqR">
-                    <rect key="frame" x="20" y="44" width="388" height="848"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="U1j-z8-BqR">
+                    <rect key="frame" x="0.0" y="44" width="428" height="848"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="R98-wU-hrX"/>
@@ -28,8 +28,8 @@
             <constraints>
                 <constraint firstItem="U1j-z8-BqR" firstAttribute="top" secondItem="R98-wU-hrX" secondAttribute="top" id="9yr-Kv-gAh"/>
                 <constraint firstItem="U1j-z8-BqR" firstAttribute="bottom" secondItem="R98-wU-hrX" secondAttribute="bottom" id="GVW-Qb-0Lf"/>
-                <constraint firstItem="U1j-z8-BqR" firstAttribute="leading" secondItem="R98-wU-hrX" secondAttribute="leading" constant="20" id="RZN-JA-S6m"/>
-                <constraint firstItem="R98-wU-hrX" firstAttribute="trailing" secondItem="U1j-z8-BqR" secondAttribute="trailing" constant="20" id="oUO-Xh-VDQ"/>
+                <constraint firstItem="U1j-z8-BqR" firstAttribute="leading" secondItem="R98-wU-hrX" secondAttribute="leading" id="RZN-JA-S6m"/>
+                <constraint firstItem="R98-wU-hrX" firstAttribute="trailing" secondItem="U1j-z8-BqR" secondAttribute="trailing" id="oUO-Xh-VDQ"/>
             </constraints>
             <point key="canvasLocation" x="137.38317757009344" y="103.67170626349893"/>
         </view>

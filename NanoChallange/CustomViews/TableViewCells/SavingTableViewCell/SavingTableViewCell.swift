@@ -13,15 +13,14 @@ class SavingTableViewCell: UITableViewCell {
     static let bindNib = UINib(nibName: "SavingTableViewCell", bundle: nil)
 
     @IBOutlet weak var amountLabel: UILabel!
-    //    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-//
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
     
+    func setCell(model: SavingAmountCellViewModel) {
+        if model.type == "amount" {
+            amountLabel.text = "IDR \(model.getSaveAmount())"
+        } else {
+            amountLabel.text = "\(model.getPercentage())%"
+        }
+        
+        amountLabel.textColor = UIColor(red: 56/255, green: 134/255, blue: 89/255, alpha: 1)
+    }
 }

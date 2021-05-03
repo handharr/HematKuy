@@ -31,6 +31,8 @@ class PlanningViewController: UIViewController {
 
 }
 
+    // MARK: - TableView Config
+
 extension PlanningViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,8 +48,7 @@ extension PlanningViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: BudgetTableViewCell.identifier, for: indexPath) as! BudgetTableViewCell
-            cell.budgetLabel.text = "Budget per day"
-            cell.budgetButton.setTitle("IDR 50.000", for: .normal)
+            cell.setCell(model: BudgetCellViewModel(title: "Budget Per Day", delegate: self))
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: PlanReminderTableViewCell.identifier, for: indexPath) as! PlanReminderTableViewCell
@@ -60,4 +61,25 @@ extension PlanningViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+}
+
+    // MARK: - Set Budget Amount config
+
+extension PlanningViewController: SetBudgetAmount {
+    func setAmount() {
+        let ac = UIAlertController(title: "Set Budget Amount", message: nil, preferredStyle: .alert)
+        ac.addTextField { textField in
+            textField.keyboardType = .asciiCapableNumberPad
+        }
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        ac.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
+            let amount = ac.textFields?[0].text
+            
+            guard let amount = amount else {return}
+            
+            let defaults = UserDefaults.standard
+            defaults.setValue(amount, forKey: "limitAmount")
+        }))
+        self.present(ac, animated: true, completion: nil)
+    }
 }

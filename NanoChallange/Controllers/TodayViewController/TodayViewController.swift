@@ -59,7 +59,7 @@ class TodayViewController: UIViewController {
         setSegmentedControl()
         
         // set dummy data
-        expenseLimit = UserSetting.limitAmount
+        expenseLimit = UserSetting.getLimitAmount()
         fetchTodayExpense()
         
         // Setup Circle
@@ -70,11 +70,12 @@ class TodayViewController: UIViewController {
         
         // setProgress
         animateProgress()
-
     }
     
     // set todayExpense
     private func fetchTodayExpense() {
+        
+        // unwrap selected date
         guard let date = selectedDate else {return}
         
         do {
@@ -100,6 +101,7 @@ class TodayViewController: UIViewController {
     
     // setup view
     private func setupUI() {
+        
         view.addSubview(percentageLabel)
         
         percentageLabel.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
@@ -107,13 +109,14 @@ class TodayViewController: UIViewController {
     }
     
     @IBAction func handleAddButton(_ sender: UIButton) {
+    
         let vc = AddTransactionViewController()
         vc.delegate = self
         self.present(vc, animated: true, completion: nil)
     }
 }
 
-// MARK: - Transaction Config
+    // MARK: - Transaction Config
 
 extension TodayViewController: AddTransactionDelegate {
     
@@ -135,21 +138,19 @@ extension TodayViewController: AddTransactionDelegate {
             print("error save")
         }
 
+        // fetch data
         fetchTodayExpense()
 
+        // reload view
         animateProgress()
-        
-//        let navCont = tabBarController?.viewControllers?[2] as? UINavigationController
-//        let trans = navCont?.viewControllers.first as? TransactionsViewController
-//        trans?.check()
     }
 }
 
-// MARK: - Animation Config
+    // MARK: - Animation Config
 
 extension TodayViewController {
     
-    func createShapeLayer(strokeColor: UIColor, fillColor: UIColor, lineWidth: CGFloat = 20) -> CAShapeLayer
+    private func createShapeLayer(strokeColor: UIColor, fillColor: UIColor, lineWidth: CGFloat = 20) -> CAShapeLayer
     {
         let circularPath = UIBezierPath(
             arcCenter: .zero,
@@ -169,7 +170,7 @@ extension TodayViewController {
         return layer
     }
     
-    func setupCircle() {
+    private func setupCircle() {
         
         // setup trackLayer
         trackLayer = createShapeLayer(
@@ -224,11 +225,11 @@ extension TodayViewController {
     }
 }
 
-// MARK: - SegmentedControl Config
+    // MARK: - SegmentedControl Config
 
 extension TodayViewController {
     
-    func setDateArray(date: Date) {
+    private func setDateArray(date: Date) {
         // get yesterday and tomorrow date
         let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: date)
         let tommorrow = Calendar.current.date(byAdding: .day, value: 1, to: date)
@@ -249,7 +250,7 @@ extension TodayViewController {
         selectedDate = date
     }
     
-    func setSegmentedControl() {
+    private func setSegmentedControl() {
         // looping date array
         for x in 0..<dateArray.count {
             

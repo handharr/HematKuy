@@ -43,6 +43,8 @@ class AddTransactionViewController: UIViewController {
     
 }
 
+    // MARK: - UITableView config
+
 extension AddTransactionViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -65,6 +67,4 @@ extension AddTransactionViewController: UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
-    
-    
 }

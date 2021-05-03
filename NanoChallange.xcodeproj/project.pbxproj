@@ -12,6 +12,8 @@
 		8607F9102636525E0010C8A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607F90F2636525E0010C8A2 /* SceneDelegate.swift */; };
 		8607F9172636525F0010C8A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8607F9162636525F0010C8A2 /* Assets.xcassets */; };
 		8607F924263655040010C8A2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607F923263655040010C8A2 /* TabBarViewController.swift */; };
+		862D58AC264035DD00CA2B90 /* BudgetCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D58AB264035DD00CA2B90 /* BudgetCellViewModel.swift */; };
+		862D58AE26403CBD00CA2B90 /* SavingAmountCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D58AD26403CBD00CA2B90 /* SavingAmountCellViewModel.swift */; };
 		8631AA4E263D7A98000F9A4F /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631AA4C263D7A98000F9A4F /* AddTransactionViewController.swift */; };
 		8631AA4F263D7A98000F9A4F /* AddTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8631AA4D263D7A98000F9A4F /* AddTransactionViewController.xib */; };
 		8631AA53263D8454000F9A4F /* AddTransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631AA51263D8454000F9A4F /* AddTransactionTableViewCell.swift */; };
@@ -47,6 +49,8 @@
 		8607F9162636525F0010C8A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8607F91B2636525F0010C8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8607F923263655040010C8A2 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		862D58AB264035DD00CA2B90 /* BudgetCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetCellViewModel.swift; sourceTree = "<group>"; };
+		862D58AD26403CBD00CA2B90 /* SavingAmountCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingAmountCellViewModel.swift; sourceTree = "<group>"; };
 		8631AA4C263D7A98000F9A4F /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
 		8631AA4D263D7A98000F9A4F /* AddTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTransactionViewController.xib; sourceTree = "<group>"; };
 		8631AA51263D8454000F9A4F /* AddTransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionTableViewCell.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				864FC226263A552700AFCB16 /* ExpenseCellViewModel.swift */,
+				862D58AB264035DD00CA2B90 /* BudgetCellViewModel.swift */,
+				862D58AD26403CBD00CA2B90 /* SavingAmountCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -171,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				864FC22A263A61F600AFCB16 /* CardView */,
-				864FC20A263A465800AFCB16 /* CollectionViewCells */,
 				864FC209263A465000AFCB16 /* TableViewCells */,
 			);
 			path = CustomViews;
@@ -186,13 +191,6 @@
 				864FC21C263A4B8E00AFCB16 /* BudgetTableViewCell */,
 			);
 			path = TableViewCells;
-			sourceTree = "<group>";
-		};
-		864FC20A263A465800AFCB16 /* CollectionViewCells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 		864FC20B263A469800AFCB16 /* Protocols */ = {
@@ -359,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				862D58AE26403CBD00CA2B90 /* SavingAmountCellViewModel.swift in Sources */,
 				86F7F1EF263C54560036733F /* Expense.swift in Sources */,
 				864FC227263A552700AFCB16 /* ExpenseCellViewModel.swift in Sources */,
 				864FC210263A489E00AFCB16 /* TodayViewController.swift in Sources */,
@@ -372,6 +371,7 @@
 				86DEDBD7263AB3E30088F4C7 /* SavingTableViewCell.swift in Sources */,
 				8631AA53263D8454000F9A4F /* AddTransactionTableViewCell.swift in Sources */,
 				86B2E4C3263EECC300C2C923 /* Transactions+CoreDataProperties.swift in Sources */,
+				862D58AC264035DD00CA2B90 /* BudgetCellViewModel.swift in Sources */,
 				86B2E4C6263EFB1800C2C923 /* Extensions.swift in Sources */,
 				864FC224263A4BDF00AFCB16 /* PlanReminderTableViewCell.swift in Sources */,
 				864FC215263A48BA00AFCB16 /* PlanningViewController.swift in Sources */,

@@ -112,11 +112,10 @@ extension TransactionsViewController: UITableViewDelegate, UITableViewDataSource
             
             switch indexPath.row {
             case 0:
-                labelCell.textLabel?.text = "This Month"
+                labelCell.textLabel?.text = "Saving Amount"
                 return labelCell
             default:
-                amountCell.amountLabel.text = "IDR 20.000"
-                amountCell.amountLabel.textColor = UIColor(red: 56/255, green: 134/255, blue: 89/255, alpha: 1)
+                amountCell.setCell(model: SavingAmountCellViewModel(type: "amount"))
                 return amountCell
             }
             
@@ -124,11 +123,10 @@ extension TransactionsViewController: UITableViewDelegate, UITableViewDataSource
             
             switch indexPath.row {
             case 0:
-                labelCell.textLabel?.text = "Total"
+                labelCell.textLabel?.text = "Saving Percentage"
                 return labelCell
             default:
-                amountCell.amountLabel.text = "IDR 80.000"
-                amountCell.amountLabel.textColor = UIColor(red: 56/255, green: 134/255, blue: 89/255, alpha: 1)
+                amountCell.setCell(model: SavingAmountCellViewModel(type: "percentage"))
                 return amountCell
             }
             
@@ -151,7 +149,7 @@ extension TransactionsViewController: UITableViewDelegate, UITableViewDataSource
         
         switch section {
         case 0:
-            label.text = "Savings"
+            label.text = "Savings This Month"
             return label
         case 2:
             label.text = "Today Expense"

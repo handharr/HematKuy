@@ -10,3 +10,7 @@ import Foundation
 protocol AddTransactionDelegate {
     func transactionDidSave(amount: String, name: String) 
 }
+
+protocol SetBudgetAmount {
+    func setAmount()
+}

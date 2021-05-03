@@ -9,6 +9,8 @@ import UIKit
 
 
 extension UILabel {
+    
+    /// Set the text label for different color and setting
     func setTextInfoAmount (
         fullText : String,
         word1 : String,
