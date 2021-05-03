@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TodayViewController" customModule="NanoChallange" customModuleProvider="target">
             <connections>
                 <outlet property="addButton" destination="DQO-OT-MJ3" id="vMD-l7-MxA"/>
+                <outlet property="amountInfoLabel" destination="o3R-1F-Q3P" id="2IV-ib-r8V"/>
                 <outlet property="dateSegmentedControl" destination="QN0-ni-EuV" id="nfj-jh-BcL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -46,15 +47,24 @@
                         <action selector="handleAddButton:" destination="-1" eventType="touchUpInside" id="3eR-vd-qo7"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3R-1F-Q3P">
+                    <rect key="frame" x="40" y="616" width="334" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="DQO-OT-MJ3" secondAttribute="bottom" constant="30" id="5Pi-54-Qv9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="o3R-1F-Q3P" secondAttribute="trailing" constant="40" id="C5h-a5-VJL"/>
                 <constraint firstItem="QN0-ni-EuV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GzT-GM-P0p"/>
+                <constraint firstItem="DQO-OT-MJ3" firstAttribute="top" secondItem="o3R-1F-Q3P" secondAttribute="bottom" constant="150" id="OG8-id-p2y"/>
                 <constraint firstItem="DQO-OT-MJ3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="S2Q-wC-FGY"/>
                 <constraint firstItem="QN0-ni-EuV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kh7-Aw-p3R"/>
                 <constraint firstItem="QN0-ni-EuV" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="nFK-Pc-7qy"/>
+                <constraint firstItem="o3R-1F-Q3P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="sXZ-Sv-fuD"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
         </view>

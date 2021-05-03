@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		86006896263D2BD60090F43C /* ExpenseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86006895263D2BD60090F43C /* ExpenseCollection.swift */; };
+		86006896263D2BD60090F43C /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86006895263D2BD60090F43C /* UserSetting.swift */; };
 		8607F90E2636525E0010C8A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607F90D2636525E0010C8A2 /* AppDelegate.swift */; };
 		8607F9102636525E0010C8A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607F90F2636525E0010C8A2 /* SceneDelegate.swift */; };
 		8607F9172636525F0010C8A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8607F9162636525F0010C8A2 /* Assets.xcassets */; };
@@ -29,6 +29,10 @@
 		864FC225263A4BDF00AFCB16 /* PlanReminderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 864FC223263A4BDF00AFCB16 /* PlanReminderTableViewCell.xib */; };
 		864FC227263A552700AFCB16 /* ExpenseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FC226263A552700AFCB16 /* ExpenseCellViewModel.swift */; };
 		864FC22C263A621500AFCB16 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FC22B263A621500AFCB16 /* CardView.swift */; };
+		86B2E4BF263EEBAC00C2C923 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86B2E4BD263EEBAC00C2C923 /* Model.xcdatamodeld */; };
+		86B2E4C2263EECC300C2C923 /* Transactions+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B2E4C0263EECC300C2C923 /* Transactions+CoreDataClass.swift */; };
+		86B2E4C3263EECC300C2C923 /* Transactions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B2E4C1263EECC300C2C923 /* Transactions+CoreDataProperties.swift */; };
+		86B2E4C6263EFB1800C2C923 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B2E4C5263EFB1800C2C923 /* Extensions.swift */; };
 		86DEDBD7263AB3E30088F4C7 /* SavingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DEDBD5263AB3E30088F4C7 /* SavingTableViewCell.swift */; };
 		86DEDBD8263AB3E30088F4C7 /* SavingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86DEDBD6263AB3E30088F4C7 /* SavingTableViewCell.xib */; };
 		86F7F1EF263C54560036733F /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F7F1EE263C54560036733F /* Expense.swift */; };
@@ -36,7 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		86006895263D2BD60090F43C /* ExpenseCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCollection.swift; sourceTree = "<group>"; };
+		86006895263D2BD60090F43C /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
 		8607F90A2636525E0010C8A2 /* NanoChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8607F90D2636525E0010C8A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8607F90F2636525E0010C8A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +64,10 @@
 		864FC223263A4BDF00AFCB16 /* PlanReminderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanReminderTableViewCell.xib; sourceTree = "<group>"; };
 		864FC226263A552700AFCB16 /* ExpenseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCellViewModel.swift; sourceTree = "<group>"; };
 		864FC22B263A621500AFCB16 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		86B2E4BE263EEBAC00C2C923 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		86B2E4C0263EECC300C2C923 /* Transactions+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataClass.swift"; sourceTree = "<group>"; };
+		86B2E4C1263EECC300C2C923 /* Transactions+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		86B2E4C5263EFB1800C2C923 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		86DEDBD5263AB3E30088F4C7 /* SavingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingTableViewCell.swift; sourceTree = "<group>"; };
 		86DEDBD6263AB3E30088F4C7 /* SavingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavingTableViewCell.xib; sourceTree = "<group>"; };
 		86F7F1EE263C54560036733F /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -108,6 +116,7 @@
 		8607F90C2636525E0010C8A2 /* NanoChallange */ = {
 			isa = PBXGroup;
 			children = (
+				86B2E4C4263EFB0A00C2C923 /* Extension */,
 				864FC20B263A469800AFCB16 /* Protocols */,
 				864FC20C263A46BA00AFCB16 /* Resources */,
 				864FC203263A458200AFCB16 /* Models */,
@@ -115,6 +124,7 @@
 				864FC205263A459400AFCB16 /* ViewModels */,
 				86006893263D0E510090F43C /* Controllers */,
 				8607F91B2636525F0010C8A2 /* Info.plist */,
+				86B2E4BD263EEBAC00C2C923 /* Model.xcdatamodeld */,
 			);
 			path = NanoChallange;
 			sourceTree = "<group>";
@@ -140,9 +150,11 @@
 		864FC203263A458200AFCB16 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				86B2E4C0263EECC300C2C923 /* Transactions+CoreDataClass.swift */,
+				86B2E4C1263EECC300C2C923 /* Transactions+CoreDataProperties.swift */,
 				86F7F1EE263C54560036733F /* Expense.swift */,
 				86F7F1F0263C549D0036733F /* DailyExpense.swift */,
-				86006895263D2BD60090F43C /* ExpenseCollection.swift */,
+				86006895263D2BD60090F43C /* UserSetting.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -254,6 +266,14 @@
 			path = CardView;
 			sourceTree = "<group>";
 		};
+		86B2E4C4263EFB0A00C2C923 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				86B2E4C5263EFB1800C2C923 /* Extensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		86DEDBD4263AB3CF0088F4C7 /* SavingTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,16 +364,20 @@
 				864FC210263A489E00AFCB16 /* TodayViewController.swift in Sources */,
 				8607F924263655040010C8A2 /* TabBarViewController.swift in Sources */,
 				864FC21A263A48D700AFCB16 /* TransactionsViewController.swift in Sources */,
+				86B2E4BF263EEBAC00C2C923 /* Model.xcdatamodeld in Sources */,
 				864FC22C263A621500AFCB16 /* CardView.swift in Sources */,
 				8607F90E2636525E0010C8A2 /* AppDelegate.swift in Sources */,
 				8607F9102636525E0010C8A2 /* SceneDelegate.swift in Sources */,
 				864FC21F263A4BAD00AFCB16 /* BudgetTableViewCell.swift in Sources */,
 				86DEDBD7263AB3E30088F4C7 /* SavingTableViewCell.swift in Sources */,
 				8631AA53263D8454000F9A4F /* AddTransactionTableViewCell.swift in Sources */,
+				86B2E4C3263EECC300C2C923 /* Transactions+CoreDataProperties.swift in Sources */,
+				86B2E4C6263EFB1800C2C923 /* Extensions.swift in Sources */,
 				864FC224263A4BDF00AFCB16 /* PlanReminderTableViewCell.swift in Sources */,
 				864FC215263A48BA00AFCB16 /* PlanningViewController.swift in Sources */,
 				8631AA4E263D7A98000F9A4F /* AddTransactionViewController.swift in Sources */,
-				86006896263D2BD60090F43C /* ExpenseCollection.swift in Sources */,
+				86006896263D2BD60090F43C /* UserSetting.swift in Sources */,
+				86B2E4C2263EECC300C2C923 /* Transactions+CoreDataClass.swift in Sources */,
 				8631AA56263D902F000F9A4F /* Protocols.swift in Sources */,
 				86F7F1F1263C549D0036733F /* DailyExpense.swift in Sources */,
 			);
@@ -536,6 +560,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		86B2E4BD263EEBAC00C2C923 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				86B2E4BE263EEBAC00C2C923 /* Model.xcdatamodel */,
+			);
+			currentVersion = 86B2E4BE263EEBAC00C2C923 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8607F9022636525E0010C8A2 /* Project object */;
 }

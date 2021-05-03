@@ -59,7 +59,7 @@ extension AddTransactionViewController: UITableViewDelegate, UITableViewDataSour
             cell.inputField.placeholder = "0"
             cell.inputField.keyboardType = .asciiCapableNumberPad
         } else {
-            cell.inputLabel.text = "Name"
+            cell.inputLabel.text = "Item"
             cell.inputField.placeholder = "What you buy?"
         }
         

@@ -6,17 +6,16 @@
 //
 
 import UIKit
+import CoreData
 
 class TransactionsViewController: UIViewController {
     
-
     @IBOutlet weak var transactionTableView: UITableView!
     
-    var expenses: [ExpenseCellViewModel] = [
-        .init(name: "Makan Bakso", amount: "10.000"),
-        .init(name: "Jajan Indomaret", amount: "5.000"),
-        .init(name: "Es Jus", amount: "15.000")
-    ]
+    // coreData context
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var expenses: DailyExpense = DailyExpense()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +28,46 @@ class TransactionsViewController: UIViewController {
         transactionTableView.dataSource = self
         
         registerCells()
+        
+        fetchData()
     }
     
     private func registerCells() {
         transactionTableView.register(SavingTableViewCell.bindNib, forCellReuseIdentifier: SavingTableViewCell.identifier)
         transactionTableView.register(UITableViewCell.self, forCellReuseIdentifier: "labelCell")
     }
-
+    
+    private func fetchData() {
+        do {
+            // create request
+            let request = Transactions.fetchRequest() as NSFetchRequest<Transactions>
+            
+            // set filtering
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/yyy"
+            let pred = NSPredicate(format: "dateString == %@", formatter.string(from: Date()))
+            request.predicate = pred
+            
+            // fetch item
+            let items = try context.fetch(request)
+            
+            // save to model
+            expenses.expenses = items
+            
+        } catch {
+            print("error fetch")
+        }
+    }
+    
+    func fetchAndReload() {
+        if transactionTableView != nil {
+            fetchData()
+            transactionTableView!.reloadData()
+        }
+    }
 }
+
+// MARK: - Table View Config
 
 extension TransactionsViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,7 +80,7 @@ extension TransactionsViewController: UITableViewDelegate, UITableViewDataSource
         case 0, 1:
             return 2
         case 2:
-            return expenses.count
+            return expenses.expenses.count
         default:
             return 0
         }
@@ -65,12 +96,20 @@ extension TransactionsViewController: UITableViewDelegate, UITableViewDataSource
         }
         
         if indexPath.section == 2 {
+            
             guard let expenseCell = expenseCell else {return UITableViewCell()}
-            let model = expenses[indexPath.row]
-            expenseCell.textLabel?.text = model.name
-            expenseCell.detailTextLabel?.text = model.amount
+            let model = expenses.expenses[indexPath.row]
+            let modelUsed = ExpenseCellViewModel(
+                name: model.name ?? "Unknown",
+                amount: "\(model.amount)"
+            )
+            expenseCell.textLabel?.text = modelUsed.name
+            expenseCell.detailTextLabel?.text = modelUsed.amount
+            
             return expenseCell
+            
         } else if indexPath.section == 0 {
+            
             switch indexPath.row {
             case 0:
                 labelCell.textLabel?.text = "This Month"
@@ -80,7 +119,9 @@ extension TransactionsViewController: UITableViewDelegate, UITableViewDataSource
                 amountCell.amountLabel.textColor = UIColor(red: 56/255, green: 134/255, blue: 89/255, alpha: 1)
                 return amountCell
             }
+            
         } else {
+            
             switch indexPath.row {
             case 0:
                 labelCell.textLabel?.text = "Total"
@@ -90,6 +131,7 @@ extension TransactionsViewController: UITableViewDelegate, UITableViewDataSource
                 amountCell.amountLabel.textColor = UIColor(red: 56/255, green: 134/255, blue: 89/255, alpha: 1)
                 return amountCell
             }
+            
         }
     }
     

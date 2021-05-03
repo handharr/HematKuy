@@ -8,32 +8,16 @@
 import Foundation
 
 class DailyExpense {
-    var date: Date
-    var expenses: [Expense] = []
-    
-    init(stringDate: String) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        
-        date = formatter.date(from: stringDate)!
-    }
-    
-    init(date: Date) {
-        self.date = date
-    }
+    var expenses: [Transactions] = []
     
     func getTotalExpense() -> Int {
         var sum = 0
         
         for x in expenses {
-            sum += x.amount
+            sum += Int(x.amount)
         }
         
         return sum
-    }
-    
-    func addExpense(expense: Expense) {
-        expenses.append(expense)
     }
     
 }

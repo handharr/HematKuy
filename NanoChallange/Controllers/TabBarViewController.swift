@@ -8,18 +8,18 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
+    
+    let vc1 = TodayViewController()
+    let vc2 = PlanningViewController()
+    let vc3 = TransactionsViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let vc1 = TodayViewController()
-        let vc2 = PlanningViewController()
-        let vc3 = TransactionsViewController()
-
+        
         let nav1 = UINavigationController(rootViewController: vc1)
         let nav2 = UINavigationController(rootViewController: vc2)
         let nav3 = UINavigationController(rootViewController: vc3)
-
+        
         nav1.navigationBar.tintColor = .label
         nav2.navigationBar.tintColor = .label
         nav3.navigationBar.tintColor = .label
@@ -37,4 +37,9 @@ class TabBarViewController: UITabBarController {
         setViewControllers([nav1, nav2, nav3], animated: false)
     }
     
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if item.tag == 3 {
+            vc3.fetchAndReload()
+        }
+    }
 }

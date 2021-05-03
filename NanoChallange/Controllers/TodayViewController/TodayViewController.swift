@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import CoreData
 
 class TodayViewController: UIViewController {
+    
+    // coreData context
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     // UI Outlet
     @IBOutlet weak var dateSegmentedControl: UISegmentedControl!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var amountInfoLabel: UILabel!
     let percentageLabel: UILabel = {
         let percentage = UILabel()
         percentage.text = "0%"
@@ -29,7 +34,7 @@ class TodayViewController: UIViewController {
     var nextDay: Date?
     
     // Expense State
-    var todayExpenses: DailyExpense?
+    var todayExpenses: DailyExpense = DailyExpense()
     var expenseLimit: Int = 0
     
     // CircleProgress State
@@ -39,8 +44,6 @@ class TodayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        setupNotificationObserver()
 
         // Setup VC
         title = "Today"
@@ -56,7 +59,7 @@ class TodayViewController: UIViewController {
         setSegmentedControl()
         
         // set dummy data
-        expenseLimit = ExpenseCollection.limitAmount
+        expenseLimit = UserSetting.limitAmount
         fetchTodayExpense()
         
         // Setup Circle
@@ -74,12 +77,31 @@ class TodayViewController: UIViewController {
     private func fetchTodayExpense() {
         guard let date = selectedDate else {return}
         
-        todayExpenses = ExpenseCollection.getDaily(date: date)
+        do {
+            // create request
+            let request = Transactions.fetchRequest() as NSFetchRequest<Transactions>
+            
+            // set filtering
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/yyy"
+            let pred = NSPredicate(format: "dateString == %@", formatter.string(from: date))
+            request.predicate = pred
+            
+            // fetch item
+            let items = try context.fetch(request)
+            
+            // save to model
+            todayExpenses.expenses = items
+            
+        } catch {
+            print("error fetch")
+        }
     }
     
     // setup view
     private func setupUI() {
         view.addSubview(percentageLabel)
+        
         percentageLabel.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         percentageLabel.center = view.center
     }
@@ -92,27 +114,40 @@ class TodayViewController: UIViewController {
 }
 
 // MARK: - Transaction Config
+
 extension TodayViewController: AddTransactionDelegate {
+    
     func transactionDidSave(amount: String, name: String) {
-        
-        if todayExpenses == nil {return}
-        
-        let newExpense = Expense(name: name, amount: Int(amount)!)
-        todayExpenses!.addExpense(expense: newExpense)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+
+        // Add new transaction
+        let newItem = Transactions(context: context)
+        newItem.name = name
+        newItem.amount = Int64(amount) ?? 0
+        newItem.date = currentDate
+        newItem.dateString = formatter.string(from: currentDate)
+
+        // save context
+        do {
+            try context.save()
+        } catch {
+            print("error save")
+        }
+
+        fetchTodayExpense()
 
         animateProgress()
+        
+//        let navCont = tabBarController?.viewControllers?[2] as? UINavigationController
+//        let trans = navCont?.viewControllers.first as? TransactionsViewController
+//        trans?.check()
     }
 }
 
 // MARK: - Animation Config
+
 extension TodayViewController {
-    private func setupNotificationObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(handleEnterForeground), name: .NSExtensionHostWillEnterForeground, object: nil)
-    }
-    
-    @objc private func handleEnterForeground() {
-        animatePulsatingLayer()
-    }
     
     func createShapeLayer(strokeColor: UIColor, fillColor: UIColor, lineWidth: CGFloat = 20) -> CAShapeLayer
     {
@@ -135,14 +170,6 @@ extension TodayViewController {
     }
     
     func setupCircle() {
-        // pulsating layer
-//        pulsatingLayer = createShapeLayer(
-//            strokeColor: UIColor.clear,
-//            fillColor: UIColor(red: 56/255, green: 134/255, blue: 89/255, alpha: 0.5),
-//            lineWidth: 0
-//        )
-//        view.layer.addSublayer(pulsatingLayer)
-//        animatePulsatingLayer()
         
         // setup trackLayer
         trackLayer = createShapeLayer(
@@ -161,18 +188,6 @@ extension TodayViewController {
         shapeLayer.strokeEnd = 0
         view.layer.addSublayer(shapeLayer)
     }
-    
-    func animatePulsatingLayer() {
-        let animation = CABasicAnimation(keyPath: "transform.scale")
-        
-        animation.toValue = 1.5
-        animation.duration = 0.8
-        animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
-        animation.autoreverses = true
-        animation.repeatCount = Float.infinity
-        
-        pulsatingLayer.add(animation, forKey: "pulseAnimate")
-    }
 
     func animateProgress() {
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
@@ -180,23 +195,37 @@ extension TodayViewController {
         basicAnimation.duration = 3
         basicAnimation.isRemovedOnCompletion = false
         
-        if todayExpenses == nil {
-            shapeLayer.strokeEnd = 0
-            shapeLayer.add(basicAnimation, forKey: "soBasic")
-            percentageLabel.text = "0%"
-            return
-        }
-        
-        let sum = todayExpenses!.getTotalExpense()
+        let sum = todayExpenses.getTotalExpense()
         let percentage = CGFloat(sum)/CGFloat(expenseLimit)
+        let leftAmount = expenseLimit - sum
     
         shapeLayer.strokeEnd = percentage
         shapeLayer.add(basicAnimation, forKey: "soBasic")
         percentageLabel.text = "\(Int(percentage * 100))%"
+        
+        if selectedDate == currentDate {
+            amountInfoLabel.setTextInfoAmount(
+                fullText: "You still have IDR \(leftAmount) left out of IDR \(expenseLimit)",
+                word1: "\(leftAmount)",
+                word2: "\(expenseLimit)",
+                color1: UIColor(red: 56/255, green: 134/255, blue: 89/255, alpha: 1),
+                color2: .black
+            )
+        } else if selectedDate == nextDay {
+            amountInfoLabel.text = "Let's save again tomorrow!!"
+        } else {
+            amountInfoLabel.setTextInfoAmount(
+                fullText: "Wow, on this day you save \(100 - Int(percentage * 100))%",
+                word1: "\(100 - Int(percentage * 100))%",
+                word2: nil,
+                color1: .black,
+                color2: nil)
+        }
     }
 }
 
 // MARK: - SegmentedControl Config
+
 extension TodayViewController {
     
     func setDateArray(date: Date) {
