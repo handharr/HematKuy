@@ -15,12 +15,19 @@ class SavingTableViewCell: UITableViewCell {
     @IBOutlet weak var amountLabel: UILabel!
     
     func setCell(model: SavingAmountCellViewModel) {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        let color = UIColor(red: 56/255, green: 134/255, blue: 89/255, alpha: 1)
+        
         if model.type == "amount" {
-            amountLabel.text = "IDR \(model.getSaveAmount())"
+            let value = model.getSaveAmount()
+            let formattedValue = formatter.string(from: NSNumber(value: value))!
+            
+            amountLabel.text = "IDR  \(formattedValue)"
+            amountLabel.textColor = color
         } else {
             amountLabel.text = "\(model.getPercentage())%"
         }
-        
-        amountLabel.textColor = UIColor(red: 56/255, green: 134/255, blue: 89/255, alpha: 1)
+        amountLabel.textColor = color
     }
 }

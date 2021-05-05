@@ -159,4 +159,29 @@ extension TransactionsViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        if indexPath.section != 2 {return nil}
+        
+        let action = UIContextualAction(style: .destructive, title: "Delete") { action, view, completionHandler in
+            
+            // get item to remove
+            let itemToRemove = self.expenses.expenses[indexPath.row]
+        
+            // remove items
+            self.context.delete(itemToRemove)
+            
+            // save context
+            do {
+                try self.context.save()
+            } catch {
+                print("error delete after save")
+            }
+            
+            // fetch and reload
+            self.fetchAndReload()
+        }
+        
+        return UISwipeActionsConfiguration(actions: [action])
+    }
 }

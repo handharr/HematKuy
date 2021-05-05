@@ -35,6 +35,7 @@
 		86B2E4C2263EECC300C2C923 /* Transactions+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B2E4C0263EECC300C2C923 /* Transactions+CoreDataClass.swift */; };
 		86B2E4C3263EECC300C2C923 /* Transactions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B2E4C1263EECC300C2C923 /* Transactions+CoreDataProperties.swift */; };
 		86B2E4C6263EFB1800C2C923 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B2E4C5263EFB1800C2C923 /* Extensions.swift */; };
+		86C5B47C26423AAD004BB6F0 /* LimitChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C5B47B26423AAD004BB6F0 /* LimitChange.swift */; };
 		86DEDBD7263AB3E30088F4C7 /* SavingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DEDBD5263AB3E30088F4C7 /* SavingTableViewCell.swift */; };
 		86DEDBD8263AB3E30088F4C7 /* SavingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86DEDBD6263AB3E30088F4C7 /* SavingTableViewCell.xib */; };
 		86F7F1EF263C54560036733F /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F7F1EE263C54560036733F /* Expense.swift */; };
@@ -72,6 +73,7 @@
 		86B2E4C0263EECC300C2C923 /* Transactions+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataClass.swift"; sourceTree = "<group>"; };
 		86B2E4C1263EECC300C2C923 /* Transactions+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		86B2E4C5263EFB1800C2C923 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		86C5B47B26423AAD004BB6F0 /* LimitChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitChange.swift; sourceTree = "<group>"; };
 		86DEDBD5263AB3E30088F4C7 /* SavingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingTableViewCell.swift; sourceTree = "<group>"; };
 		86DEDBD6263AB3E30088F4C7 /* SavingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavingTableViewCell.xib; sourceTree = "<group>"; };
 		86F7F1EE263C54560036733F /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				86F7F1EE263C54560036733F /* Expense.swift */,
 				86F7F1F0263C549D0036733F /* DailyExpense.swift */,
 				86006895263D2BD60090F43C /* UserSetting.swift */,
+				86C5B47B26423AAD004BB6F0 /* LimitChange.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				86B2E4BF263EEBAC00C2C923 /* Model.xcdatamodeld in Sources */,
 				864FC22C263A621500AFCB16 /* CardView.swift in Sources */,
 				8607F90E2636525E0010C8A2 /* AppDelegate.swift in Sources */,
+				86C5B47C26423AAD004BB6F0 /* LimitChange.swift in Sources */,
 				8607F9102636525E0010C8A2 /* SceneDelegate.swift in Sources */,
 				864FC21F263A4BAD00AFCB16 /* BudgetTableViewCell.swift in Sources */,
 				86DEDBD7263AB3E30088F4C7 /* SavingTableViewCell.swift in Sources */,

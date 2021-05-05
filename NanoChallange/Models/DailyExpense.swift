@@ -8,7 +8,18 @@
 import Foundation
 
 class DailyExpense {
+    var date: Date?
+    var limitAmount: Int?
     var expenses: [Transactions] = []
+    
+    init(date: Date, limit: Int) {
+        self.date = date
+        self.limitAmount = limit
+    }
+    
+    init() {
+        
+    }
     
     func getTotalExpense() -> Int {
         var sum = 0

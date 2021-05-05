@@ -10,6 +10,7 @@ import CoreData
 
 class SavingAmountCellViewModel {
     var items: [Transactions]?
+    var dailys: DailyExpense?
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var type: String
     var sum: Int = 0
