@@ -193,7 +193,7 @@ extension TodayViewController {
     func animateProgress() {
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         basicAnimation.fillMode = .forwards
-        basicAnimation.duration = 3
+        basicAnimation.duration = 2
         basicAnimation.isRemovedOnCompletion = false
         
         let sum = todayExpenses.getTotalExpense()

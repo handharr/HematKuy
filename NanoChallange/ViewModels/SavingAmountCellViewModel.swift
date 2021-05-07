@@ -9,11 +9,17 @@ import UIKit
 import CoreData
 
 class SavingAmountCellViewModel {
-    var items: [Transactions]?
-    var dailys: DailyExpense?
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    // atrributes
     var type: String
+    
+    // properties
+    var dailys: [DailyExpense]? = []
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var sum: Int = 0
+    var transactions: [Int:[Transactions]] = [:]
+    var limits: [LimitChange]?
+    
+    // computed properties
     var limitAmount: Int = {
         let defaults = UserDefaults.standard
         return defaults.integer(forKey: "limitAmount")
@@ -24,10 +30,25 @@ class SavingAmountCellViewModel {
         return Int(formatter.string(from: Date()))
     }()
     
+    // init function
     init(type: String) {
         self.type = type
+        fetchLimit()
         fetchData()
         sum = getSum()
+    }
+    
+    private func fetchLimit() {
+        do {
+            // create request
+            let request = LimitChange.fetchRequest() as NSFetchRequest<LimitChange>
+            let sort = NSSortDescriptor(key: "date", ascending: false)
+            request.sortDescriptors = [sort]
+            
+            limits = try context.fetch(request)
+        } catch {
+            print("failed fetch limit")
+        }
     }
     
     private func fetchData() {
@@ -46,37 +67,89 @@ class SavingAmountCellViewModel {
             request.sortDescriptors = [sort]
             
             // fetch item
-            items = try context.fetch(request)
+            let datas = try context.fetch(request)
             
+            for x in datas {
+                let day = Int(x.getDay()!)!
+                
+                if transactions[day] == nil {
+                    transactions[day] = []
+                }
+                
+                transactions[day]?.append(x)
+            }
+
+            guard let days = days else {return}
+
+            for x in 1...days {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "MM/yyy"
+                let monthYear = formatter.string(from: Date())
+                formatter.dateFormat = "dd/MM/yyy"
+                let xDate = formatter.date(from: "\(x)/\(monthYear)")
+                
+                let temp = DailyExpense()
+                temp.limitAmount = checkLimit(date: xDate!)
+                temp.date = xDate!
+
+                if let getTransactions = transactions[x] {
+                    temp.expenses = getTransactions
+                }
+                
+                dailys?.append(temp)
+            }
         } catch {
             print("error fetch")
         }
     }
     
     private func getSum() -> Int {
-        guard let items = items else {return 0}
+        guard let dailys = dailys else {return 0}
         
         var sum = 0
         
-        for x in items {
-            sum += Int(x.amount)
+        for x in dailys {
+            sum += x.getTotalExpense()
         }
         
         return sum
     }
     
-    func getSaveAmount() -> Int {
+    private func getExpectedAllocation() -> Int {
+        guard let dailys = dailys else {return 0}
         
-        // unwrap days
-        guard let days = days else {return 0}
+        var saveTotal = 0
         
-        return (limitAmount * days) - sum
+        for x in dailys {
+            saveTotal += x.limitAmount!
+        }
+        
+        return saveTotal
+    }
+    private func checkLimit(date: Date) -> Int {
+        guard let limits = limits else {return 0}
+        var amount = 0
+        
+        for x in limits {
+            if date > x.date! {
+                amount = Int(x.amount)
+                break
+            }
+        }
+        
+        return amount
     }
     
-    func getPercentage() -> Int {
-        guard let days = days else {return 0}
-        let divider = limitAmount * days
+    /// get total user save, Allocation - Spending
+    func getSaveAmount() -> Int {
         
-        return Int(Float(getSaveAmount()) / Float(divider) * 100)
+        return getExpectedAllocation() - sum
     }
+    
+    /// get total saving from allocation
+    func getPercentage() -> Int {
+        return Int(Float(getSaveAmount()) / Float(getExpectedAllocation()) * 100)
+    }
+    
+
 }

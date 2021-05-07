@@ -101,7 +101,7 @@ extension TransactionsViewController: UITableViewDelegate, UITableViewDataSource
             let model = expenses.expenses[indexPath.row]
             let modelUsed = ExpenseCellViewModel(
                 name: model.name ?? "Unknown",
-                amount: "\(model.amount)"
+                amount: Int(model.amount)
             )
             expenseCell.textLabel?.text = modelUsed.name
             expenseCell.detailTextLabel?.text = modelUsed.amount

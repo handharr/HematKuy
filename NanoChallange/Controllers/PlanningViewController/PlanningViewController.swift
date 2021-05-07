@@ -11,6 +11,9 @@ class PlanningViewController: UIViewController {
     
     @IBOutlet weak var planTableView: UITableView!
     
+    // coreData context
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -59,8 +62,6 @@ extension PlanningViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
     }
-    
-    
 }
 
     // MARK: - Set Budget Amount config
@@ -79,6 +80,17 @@ extension PlanningViewController: SetBudgetAmount {
             
             let defaults = UserDefaults.standard
             defaults.setValue(amount, forKey: "limitAmount")
+            
+            // add core data limit change
+            let newItem = LimitChange(context: self.context)
+            newItem.date = Date()
+            newItem.amount = 50000
+            
+            do {
+                try self.context.save()
+            } catch {
+                print("error save")
+            }
         }))
         self.present(ac, animated: true, completion: nil)
     }
